@@ -4,6 +4,18 @@ A Python/pandas data-cleaning and validation pipeline that transforms messy e-co
 
 ---
 
+## ⭐ Project Highlights
+
+- Cleaned and validated **10,000 e-commerce order records**
+- Integrated order data with a **2,925-record customer master**
+- Used **fuzzy matching** to standardise inconsistent product categories
+- Built validation checks for dates, prices, quantities, order totals, customer IDs, and duplicate order IDs
+- Identified **2,163 records (21.6%) requiring data-quality review**
+- Generated both a cleaned dataset and a dedicated data-quality exception dataset
+- Applied a **Detect → Validate → Correct or Flag → Document → Export** approach instead of automatically deleting problematic records
+
+---
+
 ## 💼 Business Problem
 
 E-commerce businesses rely on order data for sales reporting, customer analysis, and operational decision-making. However, raw transaction data can contain missing values, inconsistent categories, invalid transactions, duplicate records, and conflicting information across data sources.
@@ -18,6 +30,17 @@ approach.
 
 This ensures that data-quality issues are visible and reviewable instead of being silently removed.
 
+---
+
+## 🛠️ Tools & Technologies
+
+- **Python** – data cleaning, validation, and transformation
+- **Pandas** – data manipulation and analysis
+- **NumPy** – numerical validation and tolerance-based comparisons
+- **PyJanitor** – column-name standardisation and structural cleaning
+- **theFuzz** – fuzzy matching for inconsistent product categories
+- **Jupyter Notebook** – analysis workflow and documentation
+- **VS Code** – development environment
 ---
 
 ## 🗄️ Data
@@ -109,12 +132,25 @@ These records were therefore flagged for investigation rather than automatically
 
 ---
 
-##  Next Steps
+# ▶️ How to Run
 
-The cleaned dataset can be used as the foundation for further analytics, including:
+## 1. Clone the repository
+git clone https://github.com/saraaffandi-design/E-Commerce-Data-Cleaning-Quality-Validation.git
 
-1. SQL-based sales and customer analysis
-2. Exploratory data analysis with Python
-3. Power BI dashboard development
-4. Automated data-quality monitoring
-5. Development of a reusable ETL pipeline
+cd E-Commerce-Data-Cleaning-Quality-Validation
+
+## 2. Install dependencies
+pip install pandas numpy pyjanitor thefuzz python-Levenshtein
+
+## 3. Run the notebook
+
+Open:
+
+data_cleaning2.ipynb
+
+Run the notebook from top to bottom.
+
+The notebook reads the raw datasets and generates:
+
+cleaned_orders.csv
+data_quality_exceptions.csv
